@@ -49,8 +49,12 @@ return (
     <div>
         <h1>What's the Plan for Today?</h1>
         <TodoForm onSubmit={addTodo} />
+        <Search 
+        search={search}
+        setSearch={setSearch}
+        />
         <Todo
-        todos={todos} 
+        todos={todos.filter(todo=>(todo.text.toLowerCase()).includes(search.toLowerCase()))}
         updateTodo={updateTodo}
         completeTodo={completeTodo} 
         removeTodo={removeTodo} 
