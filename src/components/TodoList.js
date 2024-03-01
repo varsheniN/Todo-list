@@ -2,8 +2,13 @@ import React from 'react'
 import { useState } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm'
+import Search from './Search';
+
  function TodoList() {
+  
 const [todos,setTodos]=useState([]);
+const [search,setSearch]=useState('');
+  
 const addTodo = todo => {
     if(!todo.text || /^\s*$/.test(todo.text)) {
         return; 
